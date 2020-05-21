@@ -7,8 +7,8 @@ public class School {
 	
 	private List<Teacher> teachers; 	// Dynamic list of teachers
 	private List<Student> students;		// Dynamic list of students
-	public static int totalFundsEarned;		// Funds gained from students paying their tuition fees
-	public static int totalFundsSpent;		// Funds spent towards teacher salaries
+	public static int totalRevenue;		// Funds gained from students paying their tuition fees
+	public static int totalExpenses;		// Funds spent towards teacher salaries
 	
 	
 	/**
@@ -19,8 +19,8 @@ public class School {
 //		super();
 //		this.teachers = teachers;
 //		this.students = students;
-//		totalFundsEarned = 0;
-//		totalFundsSpent = 0;
+//		totalRevenue = 0;
+//		totalExpenses = 0;
 	}
 
 	
@@ -44,18 +44,18 @@ public class School {
 
 
 	/**
-	 * @return the totalFundsEarned by the school
+	 * @return the totalRevenue by the school
 	 */
-	public static int getTotalFundsEarned() {
-		return totalFundsEarned;
+	public static int getTotalRevenue() {
+		return totalRevenue;
 	}
 
 
 	/**
-	 * @return the totalFundsSpent by school
+	 * @return the totalExpenses by school
 	 */
-	public int getTotalFundsSpent() {
-		return totalFundsSpent;
+	public int getTotalExpenses() {
+		return totalExpenses;
 	}
 
 	
@@ -81,11 +81,11 @@ public class School {
 
 	/**
 	 * @param fundsEarned are the funds to be added to existing total
-	 *  adds/updates total funds earned by the school
+	 *  adds/updates total revenue by the school
 	 *  
 	 */
-	public static void updateTotalFundsEarned(int fundsEarned) {
-		totalFundsEarned = totalFundsEarned + fundsEarned;
+	public static void updateTotalRevenue(int fundsEarned) {
+		totalRevenue = totalRevenue + fundsEarned;
 	}
 
 
@@ -93,9 +93,9 @@ public class School {
 	 * @param fundsSpent are the funds, that were previously earned, to be deducted from total earnings
 	 *  adds/updates total funds spent by the school (salaries paid to the teachers) 
 	 */
-	public static void updateTotalFundsSpent(int fundsSpent) {
-		totalFundsSpent = totalFundsEarned - fundsSpent;
-		//totalFundsSpent -= fundsSpent;
+	public static void updateTotalExpenses(int fundsSpent) {
+		totalExpenses = totalRevenue - fundsSpent;
+		//totalExpenses -= fundsSpent;
 	}
 
 	

@@ -28,7 +28,7 @@ public class Student {
 	}
 
 
-	public static void enrollStudent() {
+	public static void enrollStudent() throws Exception {
 		//List<Student> studentList = new ArrayList<Student>();
 		
 		//Get inside a loop, user hits 0
@@ -48,6 +48,8 @@ public class Student {
 		if(action < 0 && action > 1) {
 			return;
 		}else if(action == 1) {
+			
+			do {
 			//Student newStudent = new Student(id, name, feesPaid, tuition);
 			
 			System.out.print("Enter student's name: ");
@@ -68,17 +70,19 @@ public class Student {
 				payFees(amountPaid);
 				
 				System.out.println(name + " has paid $" + feesPaid);
-				
+				School.updateTotalRevenue(feesPaid);
 				//updateTotalFundsEarned();
 				tuition = getRemainingFees();
 				System.out.println(name + " now owes $" + tuition);
 				System.out.println("---------------------------------------------------------");
 				
+				
+				//DatabaseManager.addStudent(name, feesPaid);
 				//studentList.add(newStudent);
 			} 
 		
-		}
-		
+		} while(action != 1);
+		}		
 		//getRemainingFees();
 	}
 	
@@ -137,7 +141,7 @@ public class Student {
 	 */
 	public static void payFees(int amountPaid) {
 		feesPaid += amountPaid;
-		School.updateTotalFundsEarned(feesPaid);
+		School.updateTotalExpenses(feesPaid);
 	}
 	
 	

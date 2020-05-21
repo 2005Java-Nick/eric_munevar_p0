@@ -46,7 +46,7 @@ public class Teacher {
 					
 					receiveSalary(salaryOwed);
 					System.out.println(name + " has earned = $" + salaryEarned);
-					School.updateTotalFundsSpent(salaryOwed);
+					School.updateTotalExpenses(salaryOwed);
 					System.out.println("---------------------------------------------------------");
 					//teacherList.add(newTeacher);
 				}			
@@ -102,7 +102,7 @@ public class Teacher {
 	 */
 	public static void receiveSalary(int salary) {
 		salaryEarned += salary;
-		School.updateTotalFundsSpent(salary);
+		School.updateTotalExpenses(salary);
 		
 	}
 	
