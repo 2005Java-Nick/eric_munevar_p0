@@ -85,7 +85,7 @@ public class DatabaseManager {
 	        	//Class.forName ("org.postgresql.Driver");                           // get the driver for this database.
 	            //System.out.println("Driver is set; ready to go!");
 	        	connection = DriverManager.
-	        	getConnection ("jdbc:postgresql://rev-db.cp5qmegahrer.us-east-2.rds.amazonaws.com:5432/postgres", "postgres", "ThatswhatIdo7" );  // username and password are passed into this Constructor.
+	        	getConnection ("jdbc:postgresql://rev-db.cp5qmegahrer.us-east-2.rds.amazonaws.com:5432/postgres", "postgres", "password" );  // usern and pword are passed into this Constructor.
 	            stmt  = connection.createStatement();                            // statement used to do things in the database (e.g., create the PhoneBook table).
 	            log.info("Successful connection to Database");
 	            //System.out.println("Database connection established!");
